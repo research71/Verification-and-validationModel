@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;de.stups.hhu.rodinmetapredicates.mchBase" version="5">
+    <org.eventb.core.refinesMachine name="'" org.eventb.core.target="M4"/>
+    <org.eventb.core.seesContext name=")v" org.eventb.core.target="C4_Dublin"/>
+    <org.eventb.core.variable name="S" org.eventb.core.identifier="aircrafts_in_TMA"/>
+    <org.eventb.core.variable name="]" org.eventb.core.identifier="statusof"/>
+    <org.eventb.core.variable name="m" org.eventb.core.identifier="curr_RW_status"/>
+    <org.eventb.core.variable name="n" org.eventb.core.identifier="curr_RWL_status"/>
+    <org.eventb.core.variable name="'7" org.eventb.core.identifier="clearanceL"/>
+    <org.eventb.core.variable name="'K" org.eventb.core.identifier="current_time"/>
+    <org.eventb.core.variable name="'V" org.eventb.core.identifier="brandof"/>
+    <org.eventb.core.variable name="(J" org.eventb.core.identifier="ETA"/>
+    <org.eventb.core.variable name="(C" org.eventb.core.identifier="landingQueue"/>
+    <org.eventb.core.variable name="(Y" org.eventb.core.identifier="Threshold"/>
+    <org.eventb.core.variable name="(d" org.eventb.core.identifier="entryTMAOf"/>
+    <org.eventb.core.variable name="(f" org.eventb.core.identifier="plannedRunway"/>
+    <org.eventb.core.variable name="(y" org.eventb.core.identifier="legOf"/>
+    <org.eventb.core.variable name=")(" org.eventb.core.identifier="lastEntryBrand"/>
+    <org.eventb.core.variable name=")," org.eventb.core.identifier="lastLegTime"/>
+    <org.eventb.core.variable name=")-" org.eventb.core.identifier="lastLegBrand"/>
+    <org.eventb.core.variable name=")2" org.eventb.core.identifier="legIndex"/>
+    <org.eventb.core.variable name=")4" org.eventb.core.identifier="legEntryTime"/>
+    <org.eventb.core.variable name=");" org.eventb.core.identifier="legPointTime"/>
+    <org.eventb.core.variable name=")?" org.eventb.core.identifier="lastMergeBrand"/>
+    <org.eventb.core.variable name=")@" org.eventb.core.identifier="lastMergeTime"/>
+    <org.eventb.core.variable name=")K" org.eventb.core.identifier="mergeTime"/>
+    <org.eventb.core.variable name=")P" org.eventb.core.identifier="lastEntryTime"/>
+    <org.eventb.core.variable name=")Y" org.eventb.core.identifier="cpOf"/>
+    <org.eventb.core.variable name=")Z" org.eventb.core.identifier="cpTime"/>
+    <org.eventb.core.variable name=")[" org.eventb.core.identifier="lastcpTime"/>
+    <org.eventb.core.variable name=")\" org.eventb.core.identifier="lastcpBrand"/>
+    <org.eventb.core.variable name=")w" org.eventb.core.identifier="tmaEntryTime"/>
+    <org.eventb.core.variable name=")x" org.eventb.core.identifier="acLevel"/>
+    <org.eventb.core.variable name="*3" org.eventb.core.identifier="readyTime"/>
+    <org.eventb.core.variable name="*4" org.eventb.core.identifier="depTime"/>
+    <org.eventb.core.variable name="*5" org.eventb.core.identifier="lastDepTime"/>
+    <org.eventb.core.variable name="*6" org.eventb.core.identifier="lastDepBrand"/>
+    <org.eventb.core.variable name="*F" org.eventb.core.identifier="depRwy"/>
+    <org.eventb.core.variable name="*G" org.eventb.core.identifier="clearanceT"/>
+    <org.eventb.core.variable name="*I" org.eventb.core.identifier="lastlandingBrand"/>
+    <org.eventb.core.variable name="*K" org.eventb.core.identifier="TouchdownTime"/>
+    <org.eventb.core.variable name="*L" org.eventb.core.identifier="lastlandingtime"/>
+    <org.eventb.core.event name="*M" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+        <org.eventb.core.action name="'" org.eventb.core.assignment="plan :∈ 1‥3" org.eventb.core.label="act106"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="*N" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Entry_in_TMA">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Entry_in_TMA"/>
+        <org.eventb.core.guard name="(" org.eventb.core.label="grd26" org.eventb.core.predicate="brand = sched_brand(plan)(aircraft)"/>
+        <org.eventb.core.guard name=")" org.eventb.core.label="grd27" org.eventb.core.predicate="entrytma = sched_entry(plan)(aircraft)"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd28" org.eventb.core.predicate="current_time = sched_time(plan)(aircraft)"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="*O" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Entry_Leg">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Entry_Leg"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="*P" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Direct_To">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Direct_To"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="*Q" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Move_On_Leg">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Move_On_Leg"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="*R" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Leg_End_To_Merge">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Leg_End_To_Merge"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="*S" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Schedule_Arrival">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Schedule_Arrival"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="*T" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Ready_Landing">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Ready_Landing"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="*U" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Landing_Verification">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Landing_Verification"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="*V" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Touchdown">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Touchdown"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="*W" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Terminating_Landing">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Terminating_Landing"/>
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="aircraft"/>
+        <org.eventb.core.guard name="internal1" org.eventb.core.label="grd1" org.eventb.core.predicate="aircraft ∈ aircrafts_in_TMA ∧ statusof(aircraft) = Landing"/>
+        <org.eventb.core.guard name="4" org.eventb.core.label="grd2" org.eventb.core.predicate="runway ∈ RUNWAY ∧ curr_RW_status(runway) = Unavailable ∧ curr_RWL_status(runway) = ON "/>
+        <org.eventb.core.action name="*" org.eventb.core.assignment="statusof(aircraft) ≔ TerminatedL" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="internal1" org.eventb.core.assignment="curr_RW_status(runway) ≔ Available" org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="internal2" org.eventb.core.assignment="curr_RWL_status(runway) ≔ OFF" org.eventb.core.label="act3"/>
+        <org.eventb.core.parameter name="3" org.eventb.core.identifier="runway"/>
+        <org.eventb.core.action name=")" org.eventb.core.assignment="clearanceL ≔ {aircraft} ⩤ clearanceL" org.eventb.core.label="act4"/>
+        <org.eventb.core.guard name="internal4" org.eventb.core.label="grd3" org.eventb.core.predicate="aircraft ∈ dom(clearanceL)"/>
+        <org.eventb.core.guard name="internal20" org.eventb.core.label="grd4" org.eventb.core.predicate="runway = clearanceL(aircraft)"/>
+        <org.eventb.core.guard name="0" org.eventb.core.label="grd5" org.eventb.core.predicate="durationL=60"/>
+        <org.eventb.core.guard name="internal28" org.eventb.core.label="grd9" org.eventb.core.predicate="aircraft ∈ dom(TouchdownTime)"/>
+        <org.eventb.core.guard name="." org.eventb.core.label="grd6" org.eventb.core.predicate="current_time ≥ TouchdownTime(aircraft)+ durationL"/>
+        <org.eventb.core.parameter name="/" org.eventb.core.identifier="durationL"/>
+        <org.eventb.core.guard name="5" org.eventb.core.label="grd7" org.eventb.core.predicate="current_time ∈ ℕ"/>
+        <org.eventb.core.guard name="internal19" org.eventb.core.label="grd8" org.eventb.core.predicate="aircraft ∈ dom(brandof)"/>
+        <org.eventb.core.action name="internal15" org.eventb.core.assignment="ETA ≔ {aircraft} ⩤ ETA" org.eventb.core.label="act5"/>
+        <org.eventb.core.action name="internal24" org.eventb.core.assignment="Threshold ≔ {aircraft} ⩤ Threshold" org.eventb.core.label="act6"/>
+        <org.eventb.core.action name="internal25" org.eventb.core.assignment="TouchdownTime ≔ {aircraft} ⩤ TouchdownTime" org.eventb.core.label="act7"/>
+        <org.eventb.core.action name="internal27" org.eventb.core.assignment="lastlandingtime(runway)≔ current_time" org.eventb.core.label="act8"/>
+        <org.eventb.core.action name="internal29" org.eventb.core.assignment="lastlandingBrand(runway) ≔ brandof(aircraft)" org.eventb.core.label="act9"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="*X" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="tick_tock">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="tick_tock"/>
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="tm"/>
+        <org.eventb.core.guard name="internal1" org.eventb.core.label="grd1" org.eventb.core.predicate="tm ∈ {60}"/>
+        <org.eventb.core.action name="+" org.eventb.core.assignment="current_time≔ current_time+tm" org.eventb.core.label="act1"/>
+        <org.eventb.core.guard name=")" org.eventb.core.label="grd3" org.eventb.core.predicate="current_time + tm ≤ Horizon"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd4" org.eventb.core.predicate="∀ a · a ∈ dom(ETA) ∧ a ∉ dom(legOf) ⇒ current_time + tm &lt; ETA(a) + 60"/>
+        <org.eventb.core.guard name="-" org.eventb.core.label="grd7" org.eventb.core.predicate="∀a · a ∈ AIRCRAFTS ∧ sched_time(plan)(a) ≤ current_time ⇒ a ∈ dom(brandof)"/>
+        <org.eventb.core.guard name="internal2" org.eventb.core.label="grd8" org.eventb.core.predicate="¬(∃a · a ∈ aircrafts_in_TMA ∧ statusof(a) = Blocked ∧ a ∈ dom(mergeTime) ∧ a ∈ dom(legOf) ∧ a ∉ dom(plannedRunway) ∧ a ∈ dom(cpOf) ∧ a ∈ dom(cpTime) ∧ (∀b · b ∈ dom(cpTime) ∧ b ≠ a ∧ CPRunway(cpOf(b)) = CPRunway(cpOf(a)) ∧ cpTime(b) &lt; cpTime(a) ⇒ b ∈ dom(plannedRunway)))"/>
+        <org.eventb.core.guard name="internal3" org.eventb.core.label="grd9" org.eventb.core.predicate="¬(∃a · a ∈ aircrafts_in_TMA ∧ statusof(a) = ScheduledL ∧ a ∈ dom(mergeTime) ∧ current_time ≥ mergeTime(a) ∧ a ∈ dom(plannedRunway) ∧ 1 ∈ dom(landingQueue(plannedRunway(a))) ∧ landingQueue(plannedRunway(a))(1) = a)"/>
+        <org.eventb.core.guard name="internal4" org.eventb.core.label="grd10" org.eventb.core.predicate="¬(∃a · a ∈ aircrafts_in_TMA ∧ statusof(a) = ReadyL ∧ a ∉ dom(clearanceL) ∧ a ∈ dom(plannedRunway) ∧ a ∈ dom(cpOf) ∧ a ∈ dom(cpTime) ∧ a ∈ dom(mergeTime) ∧ current_time ≥ cpTime(a) ∧ current_time ≥ mergeTime(a) ∧ 1 ∈ dom(landingQueue(plannedRunway(a))) ∧ landingQueue(plannedRunway(a))(1) = a ∧ (∀b · b ∈ dom(clearanceL) ∧ clearanceL(b) = plannedRunway(a) ∧ b ≠ a ∧ b ∈ dom(Threshold) ∧ b ∈ dom(brandof) ∧ Threshold(b) ≤ current_time + FinalDuration(cpOf(a)) ⇒ current_time + FinalDuration(cpOf(a)) − Threshold(b) ≥ Separation_time(brandof(b) ↦ brandof(a))))"/>
+        <org.eventb.core.guard name="internal5" org.eventb.core.label="grd11" org.eventb.core.predicate="¬(∃a · a ∈ aircrafts_in_TMA ∧ statusof(a) = ExecutedL ∧ a ∈ dom(clearanceL) ∧ a ∈ dom(Threshold) ∧ current_time ≥ Threshold(a) ∧ a ∉ dom(TouchdownTime) ∧ curr_RW_status(clearanceL(a)) = Available ∧ curr_RWL_status(clearanceL(a)) = OFF ∧ (clearanceL(a) ∉ dom(lastDepTime) ∨ current_time ≥ lastDepTime(clearanceL(a)) + RwySep) ∧ (clearanceL(a) ∉ dom(lastlandingtime) ∨ current_time ≥ lastlandingtime(clearanceL(a)) + Separation_time(lastlandingBrand(clearanceL(a)) ↦ brandof(a))))"/>
+        <org.eventb.core.guard name="internal6" org.eventb.core.label="grd12" org.eventb.core.predicate="∀a · a ∈ aircrafts_in_TMA ∧ statusof(a) = Landing ∧ a ∈ dom(TouchdownTime) ⇒ current_time &lt; TouchdownTime(a) + 60"/>
+        <org.eventb.core.guard name="internal7" org.eventb.core.label="grd13" org.eventb.core.predicate="∀a · a ∈ aircrafts_in_TMA ∧ statusof(a) = Takingoff ∧ a ∈ dom(depTime) ⇒ current_time &lt; depTime(a) + 60"/>
+        <org.eventb.core.guard name="internal8" org.eventb.core.label="grd14" org.eventb.core.predicate="¬(∃a · a ∈ aircrafts_in_TMA ∧ (statusof(a) = TerminatedL ∨ statusof(a) = TerminatedT ∨ (statusof(a) = ReadyT ∧ a ∉ dom(clearanceT))))"/>
+        <org.eventb.core.guard name="internal9" org.eventb.core.label="grd15" org.eventb.core.predicate="¬(∃a · a ∈ aircrafts_in_TMA ∧ statusof(a) = ExecutedT ∧ a ∈ dom(clearanceT) ∧ a ∈ dom(readyTime) ∧ a ∉ dom(depTime) ∧ curr_RW_status(clearanceT(a)) = Available ∧ curr_RWL_status(clearanceT(a)) = OFF ∧ (∀b · b ∈ aircrafts_in_TMA ∧ statusof(b) = ExecutedT ∧ b ∈ dom(readyTime) ∧ b ∈ dom(clearanceT) ∧ clearanceT(b) = clearanceT(a) ⇒ readyTime(b) ≥ readyTime(a)) ∧ (clearanceT(a) ∉ dom(lastDepTime) ∨ current_time ≥ lastDepTime(clearanceT(a)) + DepDepSep(lastDepBrand(clearanceT(a)) ↦ brandof(a))) ∧ (clearanceT(a) ∉ dom(lastlandingtime) ∨ current_time ≥ lastlandingtime(clearanceT(a)) + RwySep))"/>
+        <org.eventb.core.guard name="internal:" org.eventb.core.label="grd16" org.eventb.core.predicate="¬(∃a · a ∈ aircrafts_in_TMA ∧ a ∈ dom(legOf) ∧ a ∈ dom(legEntryTime) ∧ a ∈ dom(brandof) ∧ a ∈ dom(legIndex) ∧ a ∉ dom(mergeTime) ∧ a ∈ dom(cpOf) ∧ current_time ≥ legEntryTime(a) ∧ (PmsMerge(legPMS(legOf(a))) ↦ cpOf(a)) ∈ dom(pmCPDist) ∧ (∀b · b ∈ dom(legIndex) ∧ b ∈ dom(legOf) ∧ b ∈ dom(legEntryTime) ∧ legOf(b) = legOf(a) ⇒ legEntryTime(b) ≥ legEntryTime(a)) ∧ (PmsMerge(legPMS(legOf(a))) ∉ dom(lastMergeTime) ∨ current_time + ((wpDistMerge(legSeq(legOf(a))(legIndex(a))) ∗ 360) ÷ legSpeed) ≥ lastMergeTime(PmsMerge(legPMS(legOf(a)))) + Separation_time(lastMergeBrand(PmsMerge(legPMS(legOf(a)))) ↦ brandof(a)) + MergeBuffer) ∧ (∀x · x ∈ dom(mergeTime) ∧ x ∈ dom(legOf) ∧ PmsMerge(legPMS(legOf(x))) = PmsMerge(legPMS(legOf(a))) ⇒ mergeTime(x) &lt; current_time + ((wpDistMerge(legSeq(legOf(a))(legIndex(a))) ∗ 360) ÷ legSpeed) ∧ current_time + ((wpDistMerge(legSeq(legOf(a))(legIndex(a))) ∗ 360) ÷ legSpeed) − mergeTime(x) ≥ Separation_time(brandof(x) ↦ brandof(a))) ∧ (∀b · b ∈ dom(legEntryTime) ∧ b ∈ dom(legOf) ∧ legOf(b) = legOf(a) ∧ legEntryTime(b) &lt; legEntryTime(a) ⇒ b ∈ dom(mergeTime) ∧ mergeTime(b) &lt; current_time + ((wpDistMerge(legSeq(legOf(a))(legIndex(a))) ∗ 360) ÷ legSpeed)) ∧ (cpOf(a) ∉ dom(lastcpTime) ∨ current_time + (((wpDistMerge(legSeq(legOf(a))(legIndex(a))) ∗ 360) ÷ legSpeed) + (pmCPDist(PmsMerge(legPMS(legOf(a))) ↦ cpOf(a)) ∗ 360) ÷ legSpeed) ≥ lastcpTime(cpOf(a)) + Separation_time(lastcpBrand(cpOf(a)) ↦ brandof(a)) + MergeBuffer) ∧ (∀x · x ∈ dom(cpTime) ∧ cpOf(x) = cpOf(a) ⇒ cpTime(x) &lt; current_time + (((wpDistMerge(legSeq(legOf(a))(legIndex(a))) ∗ 360) ÷ legSpeed) + (pmCPDist(PmsMerge(legPMS(legOf(a))) ↦ cpOf(a)) ∗ 360) ÷ legSpeed) ∧ (x ∈ dom(brandof) ⇒ current_time + (((wpDistMerge(legSeq(legOf(a))(legIndex(a))) ∗ 360) ÷ legSpeed) + (pmCPDist(PmsMerge(legPMS(legOf(a))) ↦ cpOf(a)) ∗ 360) ÷ legSpeed) − cpTime(x) ≥ Separation_time(brandof(x) ↦ brandof(a)))))"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="*Y" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Takeoff_Preparing">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Takeoff_Preparing"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="*Z" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Takeoff_Verification">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Takeoff_Verification"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="*[" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Start_takingoff">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Start_takingoff"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="*\" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="Terminating_takingoff">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Terminating_takingoff"/>
+        <org.eventb.core.parameter name="'" org.eventb.core.identifier="runway"/>
+        <org.eventb.core.parameter name="(" org.eventb.core.identifier="aircraft"/>
+        <org.eventb.core.guard name=")" org.eventb.core.label="grd1" org.eventb.core.predicate="aircraft ∈ aircrafts_in_TMA ∧ statusof(aircraft) = Takingoff"/>
+        <org.eventb.core.guard name="*" org.eventb.core.label="grd2" org.eventb.core.predicate="runway ∈ RUNWAY ∧ curr_RW_status(runway) = Unavailable ∧ curr_RWL_status(runway) = ON"/>
+        <org.eventb.core.action name="+" org.eventb.core.assignment="statusof(aircraft) ≔ TerminatedT" org.eventb.core.label="act1"/>
+        <org.eventb.core.action name="," org.eventb.core.assignment="curr_RW_status(runway) ≔ Available " org.eventb.core.label="act2"/>
+        <org.eventb.core.action name="-" org.eventb.core.assignment="curr_RWL_status(runway) ≔ OFF" org.eventb.core.label="act3"/>
+        <org.eventb.core.guard name="'" org.eventb.core.label="grd3" org.eventb.core.predicate="aircraft ∈ dom(clearanceT) ∧ runway = clearanceT(aircraft)"/>
+        <org.eventb.core.guard name="0" org.eventb.core.label="grd5" org.eventb.core.predicate="durationT=60"/>
+        <org.eventb.core.guard name="3" org.eventb.core.label="grd6" org.eventb.core.predicate="aircraft ∈ dom(depTime)"/>
+        <org.eventb.core.action name=")" org.eventb.core.assignment="clearanceT ≔ {aircraft} ⩤ clearanceT" org.eventb.core.label="act4"/>
+        <org.eventb.core.guard name="." org.eventb.core.label="grd4" org.eventb.core.predicate="current_time ≥ depTime(aircraft) + durationT "/>
+        <org.eventb.core.parameter name="/" org.eventb.core.identifier="durationT"/>
+        <org.eventb.core.action name="1" org.eventb.core.assignment="lastDepTime(runway)≔ current_time" org.eventb.core.label="act5"/>
+        <org.eventb.core.action name="2" org.eventb.core.assignment="lastDepBrand(runway) ≔ brandof(aircraft)" org.eventb.core.label="act6"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="*]" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="Departing">
+        <org.eventb.core.refinesEvent name="'" org.eventb.core.target="Departing"/>
+    </org.eventb.core.event>
+    <org.eventb.core.event name="*^" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="end_horizon">
+        <org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="current_time + 60 &gt; Horizon"/>
+    </org.eventb.core.event>
+    <org.eventb.core.variable name="*_" org.eventb.core.identifier="plan"/>
+    <org.eventb.core.invariant name="*`" org.eventb.core.label="inv1" org.eventb.core.predicate="plan ∈ 1‥3"/>
+</org.eventb.core.machineFile>
